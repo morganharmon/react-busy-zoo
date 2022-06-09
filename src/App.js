@@ -29,6 +29,10 @@ function App() {
       <OpenClose zooIsOpen={zooIsOpen} />
       <button onClick={() => setZooIsOpen(!zooIsOpen)}>Open/close zoo</button>
       <DinosaurList dinosaurs={dinosaurs} />
+      <button onClick={() => setDinosaurs([...dinosaurs, 'Tyrannosaurus Rex']) }>Add T-Rex</button>
+      <button onClick={() => setDinosaurs([...dinosaurs, 'Spinosaurus']) }>Add Spinosaurus</button>
+      <button onClick={() => setDinosaurs([...dinosaurs, 'Velociraptor']) }>Add Velociraptor</button>
+      <button onClick={() => setDinosaurs([...dinosaurs, 'Dilophosaurus']) }>Add Dilophosaurus</button>
     </div>
   );
 }
