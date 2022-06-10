@@ -11,7 +11,7 @@ function App() {
   const [velociraptorCount, setVelociraptorCount] = useState(4);
 
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundImage: 'url(/images/background.jpg)' }}>
       <div className='fight'>
         <div className='fighter'>
           <button onClick={() => setVelociraptorCount(velociraptorCount + 1)}>Add Velociraptor</button>
@@ -23,7 +23,7 @@ function App() {
         <div className='fighter'>
           <button onClick={() => setTRexSize(tRexSize + 10)}>Grow T-Rex</button>
           <button onClick={() => setTRexSize(tRexSize - 10)}>Shrink T-Rex</button>
-          <img src='/images/T-rex.jpg' style={{ height: `${tRexSize * 5}px` }} alt='T-rex' className='t-rex' />
+          <img src='/images/T-rex.png' style={{ height: `${tRexSize * 5}px` }} alt='T-rex' className='t-rex' />
         </div>
       </div>
       <OpenClose zooIsOpen={zooIsOpen} />
