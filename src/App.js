@@ -3,15 +3,17 @@ import { useState } from 'react';
 import RenderRaptors from './renderRaptors.js';
 import OpenClose from './OpenClose.js';
 import DinosaurList from './DinosaurList.js';
+import PlayMusic from './PlayMusic.js';
 
 function App() {
   const [zooIsOpen, setZooIsOpen] = useState(false);
   const [dinosaurs, setDinosaurs] = useState(['Tyrannosaurus Rex', 'Spinosaurus', 'Velociraptor', 'Dilophosaurus']);
   const [tRexSize, setTRexSize] = useState(25);
   const [velociraptorCount, setVelociraptorCount] = useState(4);
-
+  
   return (
     <div className="App" style={{ backgroundImage: 'url(/images/background.jpg)' }}>
+      <PlayMusic />
       <div className='fight'>
         <div className='fighter'>
           <button onClick={() => setVelociraptorCount(velociraptorCount + 1)}>Add Velociraptor</button>
