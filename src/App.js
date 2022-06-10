@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-import RenderRaptors from './RenderRaptors.js';
+import RenderRaptors from './renderRaptors.js';
 import OpenClose from './OpenClose.js';
 import DinosaurList from './DinosaurList.js';
 import useSound from 'use-sound';
