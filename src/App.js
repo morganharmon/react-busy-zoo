@@ -1,9 +1,21 @@
 import './App.css';
 import { useState } from 'react';
-import RenderRaptors from './renderRaptors.js';
+import RenderRaptors from './RenderRaptors.js';
 import OpenClose from './OpenClose.js';
 import DinosaurList from './DinosaurList.js';
-import PlayMusic from './PlayMusic.js';
+import useSound from 'use-sound';
+import jpark from './jpark.wav';
+
+function ZooButton({ setZooIsOpen, zooIsOpen }) {
+  const [play, { stop }] = useSound(jpark, { interrupt: true });
+  return (
+    <div>
+      <button onClick={zooIsOpen ? () => {stop(); setZooIsOpen(!zooIsOpen);} : () => {play(); setZooIsOpen(!zooIsOpen);}}>
+      Open/close zoo
+      </button>
+    </div>
+  );
+}
 
 function App() {
   const [zooIsOpen, setZooIsOpen] = useState(false);
@@ -13,7 +25,6 @@ function App() {
   
   return (
     <div className="App" style={{ backgroundImage: 'url(/images/background.jpg)' }}>
-      <PlayMusic />
       <div className='fight'>
         <div className='fighter'>
           <button onClick={() => setVelociraptorCount(velociraptorCount + 1)}>Add Velociraptor</button>
@@ -29,7 +40,7 @@ function App() {
         </div>
       </div>
       <OpenClose zooIsOpen={zooIsOpen} />
-      <button onClick={() => setZooIsOpen(!zooIsOpen)}>Open/close zoo</button>
+      <ZooButton setZooIsOpen={setZooIsOpen} zooIsOpen={zooIsOpen} />
       <DinosaurList dinosaurs={dinosaurs} />
       <button onClick={() => setDinosaurs([...dinosaurs, 'Tyrannosaurus Rex']) }>Add T-Rex</button>
       <button onClick={() => setDinosaurs([...dinosaurs, 'Spinosaurus']) }>Add Spinosaurus</button>
