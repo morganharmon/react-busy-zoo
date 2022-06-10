@@ -5,17 +5,8 @@ import OpenClose from './OpenClose.js';
 import DinosaurList from './DinosaurList.js';
 import useSound from 'use-sound';
 import jpark from './jpark.wav';
+import ZooButton from './ZooButton.js';
 
-function ZooButton({ setZooIsOpen, zooIsOpen }) {
-  const [play, { stop }] = useSound(jpark, { interrupt: true });
-  return (
-    <div>
-      <button onClick={zooIsOpen ? () => {stop(); setZooIsOpen(!zooIsOpen);} : () => {play(); setZooIsOpen(!zooIsOpen);}}>
-      Open/close zoo
-      </button>
-    </div>
-  );
-}
 
 function App() {
   const [zooIsOpen, setZooIsOpen] = useState(false);
@@ -40,7 +31,7 @@ function App() {
         </div>
       </div>
       <OpenClose zooIsOpen={zooIsOpen} />
-      <ZooButton setZooIsOpen={setZooIsOpen} zooIsOpen={zooIsOpen} />
+      <ZooButton setZooIsOpen={setZooIsOpen} zooIsOpen={zooIsOpen} useSound={ useSound } jpark={ jpark } />
       <DinosaurList dinosaurs={dinosaurs} />
       <button onClick={() => setDinosaurs([...dinosaurs, 'Tyrannosaurus Rex']) }>Add T-Rex</button>
       <button onClick={() => setDinosaurs([...dinosaurs, 'Spinosaurus']) }>Add Spinosaurus</button>
