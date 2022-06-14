@@ -1,6 +1,5 @@
 import './App.css';
 import { useState } from 'react';
-import RenderRaptors from './renderRaptors.js';
 import OpenClose from './OpenClose.js';
 import DinosaurList from './DinosaurList.js';
 import useSound from 'use-sound';
@@ -12,16 +11,16 @@ function App() {
   const [zooIsOpen, setZooIsOpen] = useState(false);
   const [dinosaurs, setDinosaurs] = useState(['Tyrannosaurus Rex', 'Spinosaurus', 'Velociraptor', 'Dilophosaurus']);
   const [tRexSize, setTRexSize] = useState(25);
-  const [velociraptorCount, setVelociraptorCount] = useState(4);
+  const [velociraptorSize, setVelociraptorSize] = useState(25);
   
   return (
     <div className="App" style={{ backgroundImage: 'url(/images/background.jpg)' }}>
       <div className='fight'>
         <div className='fighter'>
-          <button onClick={() => setVelociraptorCount(velociraptorCount + 1)}>Add Velociraptor</button>
-          <button onClick={() => setVelociraptorCount(velociraptorCount - 1)}>Subtract Velociraptor</button>
+          <button onClick={() => setVelociraptorSize(velociraptorSize + 10)}>Grow Velociraptor</button>
+          <button onClick={() => setVelociraptorSize(velociraptorSize - 10)}>Shrink Velociraptor</button>
+          <img src='/images/velociraptor.png' style={{ height: `${velociraptorSize * 5}px` }} alt='Velociraptor' className='velociraptor' />
           <div>
-            <RenderRaptors velociraptorCount={ velociraptorCount } />
           </div>
         </div>
         <div className='fighter'>

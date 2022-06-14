@@ -57,6 +57,10 @@
   max-width: 100%;
   object-fit: contain;
 }
+.velociraptor {
+  max-width: 100%;
+  object-fit: contain;
+}
 
 .dinoContainer {
   display: flex;
