@@ -36,3 +36,53 @@
     transform: rotate(360deg);
   }
 }
+
+.fight {
+  display: flex;
+}
+
+.fighter {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.raptor {
+  height: auto;
+  width: 20%;
+}
+
+.t-rex {
+  max-width: 100%;
+  object-fit: contain;
+}
+.velociraptor {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.dinoContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.dino {
+  max-height: 100px;
+}
+
+button {
+  width: 150px;
+  align-self: center;
+  margin: 5px;
+}
+
+.gate {
+  max-height: 500px;
+  width: auto;
+}
+
+.tableDiv {
+  max-width: 800px;
+}
