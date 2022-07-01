@@ -82,3 +82,7 @@ button {
   max-height: 500px;
   width: auto;
 }
+
+.tableDiv {
+  max-width: 800px;
+}

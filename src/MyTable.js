@@ -3,7 +3,7 @@ import { customers } from './data.js';
 
 export default function MyTable() {
   return (
-    <div>
+    <div className='tableDiv'>
       <MaterialTable columns={
         [
           { title: 'id', field: 'id' },
